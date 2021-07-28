@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/EasyBle3.iml" filepath="$PROJECT_DIR$/.idea/modules/EasyBle3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/easyble/EasyBle3.easyble.iml" filepath="$PROJECT_DIR$/.idea/modules/easyble/EasyBle3.easyble.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sample/EasyBle3.sample.iml" filepath="$PROJECT_DIR$/.idea/modules/sample/EasyBle3.sample.iml" />
+    </modules>
+  </component>
+</project>

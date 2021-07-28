@@ -7,7 +7,315 @@
     android:background="@android:color/white"
     android:orientation="vertical"
     tools:context="com.ficat.sample.MainActivity">
+    <TextView
+        android:id="@+id/key1name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:padding="6dp"
+        android:textSize="14sp"
+        tools:text="device_name: Key 1" />
 
+    <TextView
+        android:id="@+id/key1address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:padding="6dp"
+        android:textSize="14sp"
+        tools:text="device_address: MAC 1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp">
+
+        <TextView
+            android:id="@+id/tv_connection_state_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="5dp"
+            android:gravity="center"
+            android:text="@string/device_connection_state_prefix"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/key1state"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="5dp"
+            android:gravity="center"
+            android:textSize="14sp"
+            tools:text="disconnected" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:weightSum="3">
+
+        <TextView
+            android:id="@+id/tv_connect"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_btn_common"
+            android:gravity="center"
+            android:text="@string/connect"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_disconnect"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_btn_common"
+            android:gravity="center"
+            android:text="@string/disconnect"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvWrite"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_btn_common"
+            android:gravity="center"
+            android:text="Write"
+            android:textSize="16sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/colorLL1"
+        android:layout_below="@+id/colorTV"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_15sdp">
+
+        <Button
+            android:id="@+id/cyan1"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:background="#30B0DF" />
+
+        <Button
+            android:id="@+id/purple1"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:background="#7f00ff" />
+
+        <Button
+            android:id="@+id/lime1"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:background="#BFFF00"
+            android:layout_marginRight="@dimen/_5sdp" />
+
+        <Button
+            android:id="@+id/orange1"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:background="#ff7f00"
+            android:layout_marginRight="@dimen/_5sdp"
+            />
+
+        <Button
+            android:id="@+id/red1"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:background="#FF0000"
+            android:layout_marginRight="@dimen/_5sdp"
+            />
+
+        <Button
+            android:id="@+id/yellow1"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:background="#FFFF00"
+            />
+
+        <Button
+            android:id="@+id/lemon1"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:background="#C0DC6B" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/key2name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:padding="6dp"
+        android:textSize="14sp"
+        tools:text="device_name: Key 2" />
+
+    <TextView
+        android:id="@+id/key2address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:padding="6dp"
+        android:textSize="14sp"
+        tools:text="device_address: MAC 2" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp">
+
+        <TextView
+            android:id="@+id/tv_connection_state_title2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="5dp"
+            android:gravity="center"
+            android:text="@string/device_connection_state_prefix"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/key2state"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="5dp"
+            android:gravity="center"
+            android:textSize="14sp"
+            tools:text="disconnected" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:weightSum="3">
+
+        <TextView
+            android:id="@+id/tv_connect2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_btn_common"
+            android:gravity="center"
+            android:text="@string/connect"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_disconnect2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_btn_common"
+            android:gravity="center"
+            android:text="@string/disconnect"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvWrite2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_btn_common"
+            android:gravity="center"
+            android:text="Write"
+            android:textSize="16sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/colorLL2"
+        android:layout_below="@+id/colorTV"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_15sdp">
+
+        <Button
+            android:id="@+id/cyan2"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:background="#30B0DF" />
+
+        <Button
+            android:id="@+id/purple2"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:background="#7f00ff" />
+
+        <Button
+            android:id="@+id/lime2"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:background="#BFFF00"
+            android:layout_marginRight="@dimen/_5sdp" />
+
+        <Button
+            android:id="@+id/orange2"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:background="#ff7f00"
+            android:layout_marginRight="@dimen/_5sdp"
+            />
+
+        <Button
+            android:id="@+id/red2"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:background="#FF0000"
+            android:layout_marginRight="@dimen/_5sdp"
+            />
+
+        <Button
+            android:id="@+id/yellow2"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:background="#FFFF00"
+            />
+
+        <Button
+            android:id="@+id/lemon2"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:background="#C0DC6B" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/writeResult"
+        android:text="Write Result Here"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
     <Button
         android:id="@+id/btn_scan"
         style="@style/ButtonStyle"

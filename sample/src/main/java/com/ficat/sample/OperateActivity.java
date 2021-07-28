@@ -1,6 +1,9 @@
 package com.ficat.sample;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -46,11 +49,14 @@ public class OperateActivity extends AppCompatActivity implements View.OnClickLi
     private DeviceServiceInfoAdapter adapter;
     private ServiceInfo curService;
     private CharacteristicInfo curCharacteristic;
-
+    SharedPreferences keyPref;
+    TextView tv_save_me;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_operate);
+        setContentView(R.layout.activity_operate);
+        keyPref = getSharedPreferences("keyPref", MODE_PRIVATE);
         initData();
         initView();
         initElv();
@@ -80,7 +86,7 @@ public class OperateActivity extends AppCompatActivity implements View.OnClickLi
         TextView tvAddress = findViewById(R.id.tv_device_address);
         TextView tvConnect = findViewById(R.id.tv_connect);
         TextView tvDisconnect = findViewById(R.id.tv_disconnect);
-        TextView tvReadRssi = findViewById(R.id.tv_read_rssi);
+        TextView tv_save_me = findViewById(R.id.tv_save_me);
         TextView tvRead = findViewById(R.id.tv_read);
         TextView tvWrite = findViewById(R.id.tv_write);
         llWrite = findViewById(R.id.ll_write);
@@ -103,10 +109,13 @@ public class OperateActivity extends AppCompatActivity implements View.OnClickLi
 
         tvConnect.setOnClickListener(this);
         tvDisconnect.setOnClickListener(this);
-        tvReadRssi.setOnClickListener(this);
+        tv_save_me.setOnClickListener(this);
         tvRead.setOnClickListener(this);
         tvWrite.setOnClickListener(this);
         tvNotify.setOnClickListener(this);
+
+
+
 
         tvDeviceName.setText(getResources().getString(R.string.device_name_prefix) + device.name);
         tvAddress.setText(getResources().getString(R.string.device_address_prefix) + device.address);
@@ -193,16 +202,38 @@ public class OperateActivity extends AppCompatActivity implements View.OnClickLi
             BleManager.getInstance().connect(device.address, connectCallback);
             return;
         }
+        /*
         if (!BleManager.getInstance().isConnected(device.address)) {
             Toast.makeText(this, getResources().getString(R.string.tips_connection_disconnected), Toast.LENGTH_SHORT).show();
             return;
         }
+       0
+         */
         switch (v.getId()) {
             case R.id.tv_disconnect:
                 BleManager.getInstance().disconnect(device.address);
                 break;
-            case R.id.tv_read_rssi:
-                BleManager.getInstance().readRssi(device, rssiCallback);
+            case R.id.tv_save_me:
+                AlertDialog.Builder adb = new AlertDialog.Builder(this);
+                adb.setTitle("SAVE ME");
+                adb.setMessage("WHICH KEY");
+                adb.setPositiveButton("KEY 1", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        SharedPreferences.Editor edt1 = keyPref.edit();
+                        edt1.putString("mac1",device.address);
+                        edt1.commit();
+                    }
+                });
+                adb.setNegativeButton("KEY 2", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        SharedPreferences.Editor edt2 = keyPref.edit();
+                        edt2.putString("mac2",device.address);
+                        edt2.commit();
+                    }
+                });
+                adb.show();
                 break;
             case R.id.tv_read:
                 BleManager.getInstance().read(device, curService.uuid, curCharacteristic.uuid, readCallback);
@@ -226,9 +257,15 @@ public class OperateActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onStop() {
         super.onStop();
+
+        //dont disconnect
+        /*
         if (isFinishing() && device != null && !TextUtils.isEmpty(device.address)) {
             BleManager.getInstance().disconnect(device.address);
         }
+        */
+
+
     }
 
     private BleConnectCallback connectCallback = new BleConnectCallback() {
