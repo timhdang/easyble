@@ -127,6 +127,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tv_connect.setOnClickListener(this);
         tv_connect2.setOnClickListener(this);
         tv_disconnect.setOnClickListener(this);
+        tv_disconnect2.setOnClickListener(this);
         btnScan.setOnClickListener(this);
         cyan1.setOnClickListener(this);
         purple1.setOnClickListener(this);
@@ -220,8 +221,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         @Override
         public void onDisconnected(String info, int status, BleDevice device) {
             Toast.makeText(MainActivity.this, info, Toast.LENGTH_SHORT ).show();
-            key1state.setText("Disconnected");
-            key1state.setTextColor(Color.RED);
+            key2state.setText("Disconnected");
+            key2state.setTextColor(Color.RED);
         }
     };
     private BleWriteCallback writeCallback = new BleWriteCallback() {
